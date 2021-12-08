@@ -9,14 +9,12 @@ body {
 }
 
 .container nav {
-  background-image: linear-gradient(
-    to right,
-    rgb(39, 160, 123),
-    blue,
-    rgb(136, 136, 121)
-  );
+  background-image: linear-gradient( to right, rgb(39, 160, 123), blue, rgb(136, 136, 121) );
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  position: fixed;
+  z-index: 45;
+  width: 100%;
 }
 
 .logo {
@@ -64,16 +62,8 @@ body {
   color: black;
 }
 
-.hamberger a{
-  width: 150px;
-  height: 50px;
-  background-color: black;
-  text-align: center;
-  font-size: 40px;
-}
 .mySlides {
   display: none;
-
 }
 img {
   vertical-align: middle;
@@ -207,7 +197,7 @@ p {
   padding: 8px;
   border-radius: 10px;
   transition: all 0.2s ease-in;
- border: 1px solid gray;
+  border: 1px solid gray;
 }
 .welcome .cards .card:hover {
   box-shadow: 8px 8px 8px gray;
@@ -283,7 +273,6 @@ p {
 .videoProjects.Projects .cards {
   overflow-y: scroll;
   display: initial;
- 
 }
 
 .flip-card {
@@ -291,7 +280,7 @@ p {
   width: 242px;
   height: 242px;
   margin-right: 25px;
-  perspective: 1000px; 
+  perspective: 1000px;
 }
 
 .flip-card-inner {
@@ -416,20 +405,17 @@ i {
   text-align: center;
 }
 .signIn .signInBox {
-  
   margin-top: 75px;
   display: flex;
   justify-content: space-around;
-
 }
-.signIn input{
+.signIn input {
   font-size: 35px;
   border-radius: 15px;
   border: 1px solid blue;
   width: 75%;
-
 }
-.signIn button{
+.signIn button {
   background-color: rgba(255, 255, 0, 0.808);
   text-transform: lowercase;
   font-size: 25px;
@@ -440,48 +426,44 @@ i {
   outline: none;
   cursor: pointer;
 }
-.signIn  button:hover{
+.signIn button:hover {
   background-color: crimson;
 }
 
-.signIn .signup button{
+.signIn .signup button {
   font-size: 25px;
   margin-top: 45px;
   background-color: rgba(128, 0, 128, 0.767);
 }
 
-.blog.welcome .card{
-
+.blog.welcome .card {
   min-height: 600px;
 }
 
-.blog.welcome .card h3{
+.blog.welcome .card h3 {
   color: #00000073;
   font-size: 17px;
   text-align: left;
 }
 
-.contact .row{
-display: flex;
+.contact .row {
+  display: flex;
   margin: 0 auto;
-
 }
-.contact .col h1{
+.contact .col h1 {
   font-size: 45px;
   margin-left: 20px;
 }
-.contact .row .col{
+.contact .row .col {
   width: 100%;
- min-height: 300px;
- background-color: rgba(255, 255, 0, 0.548);
+  min-height: 300px;
+  background-color: rgba(255, 255, 0, 0.548);
 }
-.row{
-
+.row {
   width: 100%;
 }
 
-.row .form{
-
+.row .form {
   display: flex;
   flex-direction: column;
   padding: 25px;
@@ -490,48 +472,66 @@ display: flex;
   color: black;
   font-weight: 900;
 }
-.formInfo{
+.formInfo {
   width: 50%;
   position: relative;
 }
-.form input{
+.form input {
   width: 100%;
   height: 40px;
   border-radius: 5px;
   border: none;
-
 }
 
-.form textarea{
+.form textarea {
   width: 100%;
 }
-.form button{
+.form button {
   background-color: purple;
   width: 100%;
   height: 50px;
   margin-top: 45px;
- 
 }
-.footer .row{
+.footer .row {
   width: 100%;
   display: flex;
   flex-direction: row;
   max-width: 800px;
   margin: 0 auto;
   margin-top: 70px;
-
 }
-.footer .row .col{
+.footer .row .col {
   width: 50%;
   height: 200px;
   text-align: center;
 }
 
-.footer .social i{
+.footer .social i {
   color: black;
   padding: 10px;
   font-size: 35px;
 }
+
+/* hamberger */
+
+.hamberger a {
+  width: 150px;
+  height: 50px;
+  background-color: black;
+  text-align: center;
+  font-size: 40px;
+}
+
+.hamberger {
+  margin-right: 45px;
+  display: none;
+  cursor: pointer;
+}
+
+/* .response.navlist {
+  display: none;
+} */
+
 
 @keyframes fade {
   from {
@@ -549,10 +549,10 @@ display: flex;
     font-size: 11px;
   }
 
-  .videoProjects .cards iframe{
+  .videoProjects .cards iframe {
     width: 100%;
   }
-  .welcome .cards{
+  .welcome .cards {
     display: initial;
   }
   .welcome .cards .card {
@@ -560,18 +560,58 @@ display: flex;
     border-bottom: 1px solid gray;
     margin-bottom: 15px;
     width: 358px;
-
   }
   .welcome .cards .card {
     padding: 34px;
   }
-  .signup,.signInInfo {
+  .signup,
+  .signInInfo {
     padding-right: 10px;
   }
-  .formInfo{
+  .formInfo {
     width: 100%;
   }
-  .text{
+  .text {
     left: 50%;
+  }
+
+  /* nav response */
+  .navlist{
+    display: none;
+  }
+  .container nav {
+    display: flex;
+    flex-direction: column;
+    min-height: 49px;
+  }
+  .response.navlist {
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 14px;
+  }
+  .response.navlist > div {
+    background-color: whitesmoke;
+    width: 100%;
+    margin: 5px 0;
+    text-align: center;
+    transition: all .3s ease;
+  }
+  .response.navlist > div a {
+    color: black;
+    font-weight: 700;
+    padding: 10px;
+  }
+  .response.navlist > div:hover {
+    background-color:#ddd;
+  }
+  
+
+  .hamberger {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -42px;
+    margin-bottom: 45px;
   }
 }

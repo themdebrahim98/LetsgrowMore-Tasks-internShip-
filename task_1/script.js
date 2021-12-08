@@ -1,5 +1,7 @@
 let slideIndex = 1;
 const eventsImage = document.querySelector('.events .wrapper img');
+const navList = document.querySelector('.navlist');
+const hambarger = document.querySelector('.container .hamberger');
 
 const sources =  ['event1.jpg','event2.jpg','event3.jpg' ];
 let currentImage  = 0;
@@ -53,3 +55,11 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+
+
+//navlist
+
+hambarger.addEventListener('click',()=>{
+  navList.classList.toggle('response')
+})
+
