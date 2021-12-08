@@ -49,7 +49,7 @@ function App() {
 							users.map((user, idx) => {
 								const userData = user;
 								return (
-									<div className="col">
+									<div key={idx} className="col">
 										<Card userData={userData} />
 									</div>
 								)
@@ -61,7 +61,7 @@ function App() {
 			}
 
 			{
-				loading ? (<div class="loader"></div>) : null
+				loading ? (<div className="loader"></div>) : null
 			}
 
 
