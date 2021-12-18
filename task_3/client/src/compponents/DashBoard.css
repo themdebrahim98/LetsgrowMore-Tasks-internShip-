@@ -1,0 +1,72 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.dashboard .sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding: 25px;
+}
+.dashboard h1{
+  margin-bottom: 45px;
+}
+
+.dashboard .sidenav button {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  background-color: #ddd;
+  margin-top: 15px;
+  width: 205px;
+  cursor: pointer;
+  margin: 0 auto;
+  border-radius: 19px;
+  margin-bottom: 25px;
+  border: 1px solid crimson;
+  box-shadow: 4px 4px 18px deepskyblue;
+}
+
+.dashboard .sidenav button:hover {
+  color: blueviolet;
+  box-shadow:  4px 4px 18px gray;
+  
+}
+
+.dashboard .main {
+  margin-left: 250px; /* Same as the width of th.dashboarde sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+.dashboard .cards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 45px;
+  margin-top: 25px;
+}
+.dashboard .cards .card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  background-color: red;
+}
+
+@media screen and (max-height: 450px) {
+  .dashboard .sidenav {
+    padding-top: 15px;
+  }
+  .dashboard .sidenav a {
+    font-size: 18px;
+  }
+}

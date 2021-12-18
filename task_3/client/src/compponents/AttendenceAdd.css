@@ -1,0 +1,8 @@
+.attendenceadd button{
+  width: auto;
+  padding: 5px 15px;
+  margin-bottom: 45px;
+}
+.attendenceadd table th{
+  width: 250px;
+}

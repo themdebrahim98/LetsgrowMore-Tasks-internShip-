@@ -1,0 +1,49 @@
+*{
+  font-family: monospace;
+  color: black;
+  font-weight: 400;
+}
+
+.AttendenceManage table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  font-size: 18px;
+  padding: 10px;
+}
+.AttendenceManage table input{
+    width: 50px;
+    /* margin-left: 15px; */
+    background-color: rgb(241, 238, 238);
+    height: 30px;
+    min-width: 100%;
+    text-align: center;
+}
+.AttendenceManage  table th{
+    width: 250px;
+}
+.AttendenceManage button{
+  background-color: green;
+  width: 128px;
+  padding: 2px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+.AttendenceManage h1{
+  font-size: 34px;
+  text-transform: capitalize;
+  background: cyan;
+  color: blue;
+  display: block;
+  max-width: 240px;
+}
+
+.AttendenceManage td i{
+  cursor: pointer;
+}
+.refresh{
+  background: blue;
+  color: wheat;
+  cursor: pointer;
+}

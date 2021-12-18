@@ -1,0 +1,42 @@
+.dashBoardDatas {
+  /* Same as the width of th.dashBoardDatase sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+
+  .dashBoardDatas .cards{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 45px;
+      margin-top: 25px;
+  }
+  .dashBoardDatas .cards .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 8px;
+    font-size: 30px;
+    text-align: center;
+   
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px grey;
+    transition: all .3s ease-in;
+  }
+  .dashBoardDatas .cards .card:hover {
+    box-shadow: 4px 5px 8px blueviolet;
+ 
+  }
+
+  .dashBoardDatas .cards .card:nth-child(2n+1) {
+ 
+      background: linear-gradient(
+        45deg, #2196f3, #bfdc39);
+  }
+
+
+  .dashBoardDatas .cards .card:nth-child(2n){
+    background: linear-gradient(
+      45deg, #f321f3, #0d6bc2);
+   
+  }
+
+
