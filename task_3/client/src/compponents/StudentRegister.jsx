@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './StudentRegister.css';
 import axios from 'axios';
 import StudentLogin from './StudentLogin';
+import { Link } from 'react-router-dom';
 
 export default function StudentRegister() {
 
@@ -43,7 +44,6 @@ export default function StudentRegister() {
       <div className="student_register">
 
 
-
         <div className="card">
           <h1>Student Register..</h1>
           <form action="" onSubmit={dataSubmit}>
@@ -78,7 +78,9 @@ export default function StudentRegister() {
               <input required={true} value={inputDatas.phone} onChange={handlechange} type="text" name="phone" id="phone" />
             </div>
 
-            <button type="submit">Submit</button>
+            <button type="submit">Register</button>
+            <button ><Link to="/student/login" style={{textDecoration:"none"}}>Click to Login</Link></button>
+
 
           </form>
 

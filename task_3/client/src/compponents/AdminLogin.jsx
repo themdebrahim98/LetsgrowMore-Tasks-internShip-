@@ -85,7 +85,7 @@ export default function AdminLogin() {
               <input required={true} value={inputDatas.password} onChange={handlechange} type="text" name="password" id="password" />
             </div>
 
-            <button type="submit">Submit</button>
+            <button type="submit">Login</button>
 
           </form>
 

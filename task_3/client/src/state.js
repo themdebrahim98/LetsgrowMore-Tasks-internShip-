@@ -1,5 +1,5 @@
 let state = {
-    login: true,
+    login: false,
     username: 'md khan',
 
   
@@ -14,4 +14,9 @@ function setState(newState){
 //   Object.assign(state,newState)
     
 }
-export {state,setState,getState};
+
+let studentState = {
+  login:false,
+  username:"md@123"
+}
+export {state,setState,getState,studentState};

@@ -1,0 +1,70 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.adminProfile{
+  width: auto;
+  height:100vh;
+  background-color:rgb(231, 231, 226) ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+ 
+}
+
+.adminProfile .card{
+ background-color:rgb(212, 212, 203) ;
+  width: 600px;
+ min-height: 700px;
+  margin: 0 auto;
+  padding: 15px;
+border-radius: 10px;
+margin-left: 45px;
+}
+
+.adminProfile .card form {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: wrap;
+ 
+
+}
+.adminProfile .data,button {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-top: 28px;
+  font-size: 25px;
+  
+}
+.adminProfile .data input{
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 5px;
+  color: black;
+}
+.adminProfile button{
+  width: 150px;
+  text-align: center;
+  align-items: center;
+  background-color: turquoise;
+  cursor: pointer;
+  padding:15px;
+}
+
+
+.adminProfile .avatar{
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+.adminProfile .avatar img{
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}

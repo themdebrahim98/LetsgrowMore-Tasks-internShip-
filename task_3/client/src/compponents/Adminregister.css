@@ -1,70 +1,75 @@
-*{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.admin_register{
-    width: 100vw;
-    height:100vh;
-    background-color: rgb(173, 173, 211);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-   
+.admin_register {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(173, 173, 211);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.admin_register .card{
-   background-color:yellow ;
-    width: 500px;
-   min-height: 400px;
-    margin: 0 auto;
-    padding: 15px;
-border-radius: 10px;
+.admin_register .card {
+  background: linear-gradient(45deg, #2196f3, #ffeb3b);
+  width: 700px;
+  min-height: 400px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .admin_register .card form {
     width: 100%;
     height: 100%;
+    display: flex;
     border-radius: 10px;
-   
+    flex-flow: wrap;
+    /* margin-top: 28px; */
 
 }
-.admin_register .data,button {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin-top: 28px;
-    font-size: 25px;
-    
+.admin_register .data,
+button {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-top: 28px;
+  font-size: 25px;
 }
-.admin_register .data input{
-    font-size: 20px;
-    border-radius: 10px;
-    padding: 5px;
-    color: black;
+.admin_register .data input {
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 5px;
+  color: black;
+  margin-right: 15px;
 }
-.admin_register button{
-    width: 100%;
-    text-align: center;
-    align-items: center;
-    background-color: turquoise;
-    cursor: pointer;
-}
-.responsesMessage{
-    position: absolute;
-    top: 0;
-    /* bottom: 0; */
-    width: 100%;
-    /* background: rgba(0,0,0,.3); */
-    background: transparent;
-    text-align: center;
-    height: 200px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    font-weight: 900;
-    text-transform: capitalize;
-    text-shadow: 5px 5px 9px;
+.admin_register button {
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  background-color: turquoise;
+  cursor: pointer;
+  /* position: relative; */
+  /* bottom: 0; */
 
+  border-radius: 15px;
+  padding: 10px;
+}
+.admin_register .responsesMessage {
+  position: absolute;
+  top: 0;
+  /* bottom: 0; */
+  width: 100%;
+  /* background: rgba(0,0,0,.3); */
+  background: transparent;
+  text-align: center;
+  height: 200px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-weight: 900;
+  text-transform: capitalize;
+  text-shadow: 5px 5px 9px;
 }

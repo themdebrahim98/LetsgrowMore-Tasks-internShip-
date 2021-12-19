@@ -28,25 +28,22 @@ export default function DashBoardDatas() {
                 </div>
 
                 <div className="card">
-                    <h2>Total Studens</h2>
-                    <h2>{fetchDatas.length>0? fetchDatas[2].studentsCount:null}</h2>
-                </div>
-                <div className="card">
                     <h2>Total Classes</h2>
                     <h2> {fetchDatas.length> 0? fetchDatas[1].classesCount:null}</h2>
                 </div>
                 <div className="card">
+                    <h2>Total Studens</h2>
+                    <h2>{fetchDatas.length>0? fetchDatas[2].studentsCount:null}</h2>
+                </div>
+                <div className="card">
+                    <h2>Total Result</h2>
+                    <h2> {fetchDatas.length> 0? fetchDatas[3].results:null}</h2>
+                </div>
+                <div className="card">
                     <h2>Total Attendence</h2>
-                    <h2> {fetchDatas.length> 0? fetchDatas[1].classesCount:null}</h2>
+                    <h2> {fetchDatas.length> 0? fetchDatas[4].attendencess:null}</h2>
                 </div>
-                <div className="card">
-                    <h2>Total Result</h2>
-                    <h2> {fetchDatas.length> 0? fetchDatas[1].classesCount:null}</h2>
-                </div>
-                <div className="card">
-                    <h2>Total Result</h2>
-                    <h2> {fetchDatas.length> 0? fetchDatas[1].classesCount:null}</h2>
-                </div>
+                
 
             </div>
 

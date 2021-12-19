@@ -1,0 +1,43 @@
+.studentDashBoardDatas {
+  /* Same as the width of th.studentDashBoardDatase sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+
+  .studentDashBoardDatas .cards{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: 45px;
+      margin-top: 25px;
+  }
+  .studentDashBoardDatas .cards .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 8px;
+    font-size: 30px;
+    text-align: center;
+    height: 150px;
+   
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px grey;
+    transition: all .3s ease-in;
+  }
+  .studentDashBoardDatas .cards .card:hover {
+    box-shadow: 4px 5px 8px blueviolet;
+ 
+  }
+
+  .studentDashBoardDatas .cards .card:nth-child(2n+1) {
+ 
+      background: linear-gradient(
+        45deg, #2196f3, #bfdc39);
+  }
+
+
+  .studentDashBoardDatas .cards .card:nth-child(2n){
+    background: linear-gradient(
+      45deg, #f321f3, #0d6bc2);
+   
+  }
+
+

@@ -1,0 +1,26 @@
+.resultView table, th, td {
+  border:1px solid black;
+  border-collapse: collapse;
+}
+
+.resultView input{
+  width: 150px;
+  height: 57px;
+  text-align: center;
+  font-size: 20px;
+}
+.resultView th{
+  width: 70px;
+}
+
+.resultView table{
+  margin-top: 78px;
+}
+.resultView h1{
+  text-align: center;
+
+  border-bottom: 10px solid crimson;
+  width: 450px;
+  margin:  0 auto;
+  margin-top: 78px;
+}

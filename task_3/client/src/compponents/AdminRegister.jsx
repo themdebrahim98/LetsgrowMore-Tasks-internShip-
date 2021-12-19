@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import './Adminregister.css';
 import axios from 'axios';
 import StudentLogin from './StudentLogin';
+import { Link } from 'react-router-dom';
 
 export default function AdminRegister() {
 
@@ -68,7 +69,9 @@ export default function AdminRegister() {
             <label htmlFor="adminPermissionCode">adminPermissionCode</label>
             <input required={true} value={inputDatas.adminPermissionCode} onChange={handlechange} type="text" name="adminPermissionCode" id="adminPermissionCode" />
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit">Register</button>
+          <button type="submit"><Link to='/admin/login' style={{textDecoration:"none"}}>Clcik to login</Link></button>
+
 
         </form>
 

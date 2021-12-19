@@ -96,7 +96,7 @@ export default function AttendenceManage() {
 
             <AttendenceAdd />
 
-            <h1>Student manage</h1>
+            <h1>Attendence manage</h1>
 
             <table style={{ width: "100%", height: "50%" }}>
 

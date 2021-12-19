@@ -77,6 +77,33 @@ router.post("/admin/login/:id", adminAuth, (req, res) => {
   res.json({ loginStatus: true });
 });
 
+router.post("/adminprofile", async (req, res) => {
+  try {
+    const data = req.body;
+    console.log(data,'profile')
+    const sql = `SELECT * FROM admins WHERE userName = '${data.username}'`;
+    const result = await promisedQuery(sql);
+    res.send(result);
+    console.log(result,'profile')
+  } catch (error) {
+    res.send("user not found");
+  }
+});
+
+router.post("/adminprofileupdate", async (req, res) => {
+  const data = req.body;
+  console.log(data, "data");
+  const sql1 = `UPDATE admins SET ? WHERE uuid = '${data.uuid}'; `;
+  try {
+    const reslult = await promisedQuery(sql1, data);
+    res.send(reslult);
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "something error in database" });
+  }
+});
+
 function adminAuth(req, res, next) {
   const data = req.body;
   console.log(req.params.id, "id");
@@ -117,6 +144,37 @@ function studentAuth(req, res, next) {
     }
   });
 }
+
+
+router.post("/studentprofile/", async (req, res) => {
+  const data = req.body;
+  //classHosterUserName, classDate, dept, year, subjectCode
+  const sql1 = `SELECT * FROM students  WHERE userName = '${data.userName}' `;
+  try {
+    const result = await promisedQuery(sql1);
+    if (result.length > 0) {
+      res.json(result);
+      console.log(result, "result");
+    } else {
+      console.log("dtudent not found");
+      res.json([]);
+    }
+  } catch (error) {}
+});
+
+router.post("/studentprofileupdate", async (req, res) => {
+  const data = req.body;
+  console.log(data, "data");
+  const sql1 = `UPDATE students SET ? WHERE uuid = '${data.uuid}'; `;
+  try {
+    const reslult = await promisedQuery(sql1, data);
+    res.send(reslult);
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "something error in database" });
+  }
+});
 
 router.get("/admin/allstudents/", async (req, res) => {
   const data = req.body;
@@ -203,8 +261,14 @@ router.post("/resultview/", async (req, res) => {
     from students
     INNER JOIN results on students.uuid = results.students_uuid  WHERE userName  = '${data.userName}';`;
   try {
+    
     const result = await promisedQuery(sql);
-    res.send(result);
+    if(result[0].userName === null){
+      res.send([]);
+    }else{
+
+      res.send(result);
+    }
   } catch (error) {
     res.send("result not found");
   }
@@ -232,7 +296,7 @@ router.get("/admin/allresultview/", async (req, res) => {
 });
 
 router.post("/admin/resultupdate", async (req, res) => {
-  const { uuid, math, dsa, algo, eng, dbms, signalSystem,userName } = req.body;
+  const { uuid, math, dsa, algo, eng, dbms, signalSystem, userName } = req.body;
   const data = {
     uuid,
     math,
@@ -241,13 +305,13 @@ router.post("/admin/resultupdate", async (req, res) => {
     eng,
     dbms,
     signalSystem,
-    userName
+    userName,
   };
-  const sql2 = `SELECT uuid from students WHERE userName = '${userName}'`
+  const sql2 = `SELECT uuid from students WHERE userName = '${userName}'`;
   const getUSerID = await promisedQuery(sql2);
   data.students_uuid = getUSerID[0].uuid;
   delete data.userName;
-  console.log(data,'rrr',getUSerID);
+  console.log(data, "rrr", getUSerID);
   const sql1 = `UPDATE results SET ? WHERE uuid = '${data.uuid}'; `;
   try {
     const reslult = await promisedQuery(sql1, data);
@@ -255,7 +319,7 @@ router.post("/admin/resultupdate", async (req, res) => {
     console.log(data);
   } catch (err) {
     res.json({ message: "something error in database" });
-    console.log(err)
+    console.log(err);
   }
 });
 
@@ -269,8 +333,6 @@ router.post("/admin/resultdelete", async (req, res) => {
     res.send("not deleted");
   }
 });
-
-
 
 router.post("/admin/classadd/", async (req, res) => {
   const data = req.body;
@@ -481,9 +543,14 @@ router.get("/admin/dashboarddatas", async (req, res) => {
   const result2 = await promisedQuery(sql2);
   const sql3 = `SELECT count(uuid) as studentsCount  FROM students;`;
   const result3 = await promisedQuery(sql3);
-  // console.log(result1,result2,result3);
+  const sql4 = `SELECT count(uuid) as results  FROM results;`;
+  const result4 = await promisedQuery(sql4);
+  const sql5 = `SELECT count(uuid) as attendencess  FROM attendencess;`;
+  const result5 = await promisedQuery(sql5);
 
-  arr = [...arr, result1[0], result2[0], result3[0]];
+  console.log(result1, result2, result3, result4, result5);
+
+  arr = [...arr, result1[0], result2[0], result3[0], result4[0], result5[0]];
   console.log(arr[0].adminsCount);
   res.send(arr);
 });
@@ -501,7 +568,3 @@ function promisedQuery(sql, data = null) {
 }
 
 module.exports = router;
-
-
-
-

@@ -11,7 +11,7 @@ export default function NavBar() {
     return (
         <div className="navbar">
             <nav>
-                <div className="log">Logo</div>
+                <div className="logo">Logo</div>
                 <div class="dropdown">
                     <button class="dropbtn">Login</button>
                     <div class="dropdown-content">
